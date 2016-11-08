@@ -1,6 +1,7 @@
 
 // Body
-$body-bg: #f5f8fa;
+$body-bg: #fff;
+$bg_url: '/img/background/concrete_seamless.png';
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
@@ -35,3 +36,10 @@ $input-color-placeholder: lighten($text-color, 30%);
 
 // Panels
 $panel-default-heading-bg: #fff;
+
+$primaryColor: #96858F;
+$secondaryColor: #6D7993;
+$tertiaryColor: #9099A2;
+$quaternaryColor: #D5D5D5;
+
+$transition: 0.4s all cubic-bezier(0.785, 0.135, 0.15, 0.86)

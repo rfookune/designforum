@@ -6,4 +6,62 @@
 @import "variables";
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";	
+
+body {
+	color: $primaryColor;
+}
+
+span.mdi {
+	margin-right: 8px;
+}
+
+@media only screen and (max-width: 800px) {
+
+	.table-bordered {
+		border: none;
+	}
+
+    /* Force table to not be like tables anymore */
+	.bs-responsive-table table, 
+	.bs-responsive-table thead, 
+	.bs-responsive-table tbody, 
+	.bs-responsive-table th, 
+	.bs-responsive-table td, 
+	.bs-responsive-table tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.bs-responsive-table thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	.bs-responsive-table tr { border: 1px solid #ccc; }
+ 
+	.bs-responsive-table td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	.bs-responsive-table td:before { 
+		position: relative;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+ 
+	/*
+	Label the data
+	*/
+	.bs-responsive-table td:before {content: attr(data-title); }
+}

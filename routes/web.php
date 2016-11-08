@@ -11,6 +11,23 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/laravel', function () {
     return view('welcome');
 });
+
+Route::get('/', 'FrontendController@home');
+
+Route::get('/portfolio', 'FrontendController@portfolio');
+Route::get('/team', 'FrontendController@team');
+Route::get('/portfolio/{slug}', 'FrontendController@project');
+
+Route::get('/faq', 'FrontendController@faq');
+Route::get('/contact', 'FrontendController@contact');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('/message', 'MessageController');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
