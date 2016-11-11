@@ -5,7 +5,6 @@
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.min.css">
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
 	<style>
-
 		.owl-carousel:hover .owl-buttons {
 			display: block;
 		}

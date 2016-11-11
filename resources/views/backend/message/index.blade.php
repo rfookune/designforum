@@ -8,7 +8,7 @@
                 <div class="panel-heading">Messages</div>
 
                 <div class="panel-body">
-                    <a href="/message/create" class="btn btn-primary"><span class="mdi mdi-plus"></span>Create Message</a>
+                    <a href="/admin/message/create" class="btn btn-primary"><span class="mdi mdi-plus"></span>Create Message</a>
                     <br><br>
                     <div class="bs-responsive-table">
                         <table class="table table-bordered table-striped table-condensed">
@@ -27,7 +27,7 @@
                                 @foreach($messages as $message)
                                     <tr>
                                         <td data-title="View" class="text-center">
-                                            <a href="/message/{{$message->id}}"><span class="mdi mdi-more"></span></a>
+                                            <a href="/admin/message/{{$message->id}}"><span class="mdi mdi-more"></span></a>
                                         </td>
                                         <td data-title="First Name">{{$message->name_first}}</td>
                                         <td data-title="Last Name">{{$message->name_last}}</td>
@@ -35,7 +35,7 @@
                                         <td data-title="Phone Number">{{$message->phone_number}}</td>
                                         <td data-title="Uploaded At">{{$message->created_at}}</td>
                                         <td data-title="Delete" class="text-center">
-                                            <a href="/message/{{$message->id}}" class="delete"><span class="mdi mdi-close text-danger"></span></a>
+                                            <a href="/admin/message/{{$message->id}}" class="delete"><span class="mdi mdi-close text-danger"></span></a>
                                         </td>
                                     </tr>
                                 @endforeach

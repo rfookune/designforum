@@ -27,7 +27,7 @@
                     <div class="row">
                         <div class="action-wrapper">
                             <div class="col-sm-4 text-center">
-                                <a href="/message" class="action"><i class="mdi mdi-message"></i>
+                                <a href="/admin/message" class="action"><i class="mdi mdi-message"></i>
                                     <br>
                                     Messages
                                 </a>

@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/1.7.22/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css">
     <link rel="stylesheet" href="/css/flaticon.css">
     <link href="/css/frontend.css" rel="stylesheet">
     <style>
@@ -94,22 +95,61 @@
     </script>
 </head>
 <body>
+    
+    <div class="main-content animsition">
 
-    @include('frontend.partials.navbar')
-    @include('frontend.partials.sidebar')
+        @include('frontend.partials.navbar')
+        @include('frontend.partials.sidebar')
 
-    @yield('header')
+        @yield('header')
 
-    @yield('content')
+        @yield('content')
 
-    @include('frontend.partials.footer')
+        @include('frontend.partials.footer')
 
-    <a href="#" id="to--top" class="to--top"><span class="mdi mdi-chevron-up"></span></a>
+        <a href="#" id="to--top" class="to--top"><span class="mdi mdi-chevron-up"></span></a>
+
+    </div>
 
     <!-- Scripts -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
     <script src=//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js></script>
     <script src="/js/frontend.js"></script>
+
+    <script>
+        $animsition = $(".animsition");
+        $(document).ready(function() {
+            $animsition.animsition({
+                inClass: 'fade-in',
+                outClass: 'fade-out',
+                inDuration: 1500,
+                outDuration: 800,
+                linkElement: '.animsition-link',
+                // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+                loading: true,
+                loadingParentElement: 'body', //animsition wrapper element
+                loadingClass: 'animsition-loading',
+                loadingInner: '', // e.g '<img src="loading.svg" />'
+                timeout: false,
+                timeoutCountdown: 5000,
+                onLoadEvent: true,
+                browser: [ 'animation-duration', '-webkit-animation-duration'],
+                // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+                // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+                overlay : false,
+                overlayClass : 'animsition-overlay-slide',
+                overlayParentElement : 'body'
+            });
+        });
+
+        $(document).on('click', '.foo', function(event){
+            event.preventDefault();
+            var $elem = $(this);
+            var url = $elem.attr('href');
+            $animsition.animsition('out', $elem, url);
+        });
+    </script>
 
     @yield('scripts')
 </body>

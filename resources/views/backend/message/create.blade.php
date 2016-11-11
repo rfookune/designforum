@@ -8,7 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    <form method="POST" action="/message" class="form">
+                    <form method="POST" action="/admin/message" class="form">
                         {{ csrf_field() }}
                         <div class="row">
                             <div class="col-sm-6">

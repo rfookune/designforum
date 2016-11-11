@@ -24,7 +24,9 @@ Route::get('/portfolio/{slug}', 'FrontendController@project');
 Route::get('/faq', 'FrontendController@faq');
 Route::get('/contact', 'FrontendController@contact');
 
-Route::group(['middleware' => ['auth']], function () {
+Route::post('/send-message', 'MessageController@store');
+
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
     Route::resource('/message', 'MessageController');
 });
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Route;
 
 use App\Message;
 
@@ -43,8 +44,11 @@ class MessageController extends Controller
         $message = new Message;
         $message->fill($request->all());
         $message->save();
-
-        return redirect('/message');
+        if (strpos(Route::current()->uri(), 'admin') !== false) {
+            return redirect('/admin/message');
+        }
+        
+        return 'Message Sent';
     }
 
     /**
